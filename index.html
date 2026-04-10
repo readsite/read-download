@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
-    <title>Read.｜一歌，一句，一文，躲藏在时光背后的无尽地带</title>
-    <meta name="description" content="Read.是一款专注于深度阅读、每日音乐推荐与句子收藏的安卓应用。在安静的时光里，一字一文，享受纯粹阅读与旋律之美。免费下载安卓版，静心慢读，收藏字句。">
-    <meta name="keywords" content="阅读app,每日音乐,句子收藏,深度文章,安卓阅读器,Read下载,静心阅读,音乐阅读,字句收藏,纯粹阅读">
-    <meta name="robots" content="index, follow">
-    <link href="img/favicon.png" rel="icon">
+    <title>Read.小读 - 每日一歌一句一文，静心阅读</title>
+    <meta name="description" content="Read.小读 是一款专注于深度阅读、每日音乐推荐与句子收藏的安卓应用。在安静的时光里，一字一文，享受纯粹阅读与旋律之美。免费下载安卓版，静心慢读，收藏字句。">
+    <meta name="keywords" content="阅读app,每日音乐,句子收藏,深度文章,安卓阅读器,Read下载,静心阅读,音乐阅读,字句收藏">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     <style>
         * {
@@ -17,266 +15,497 @@
         }
 
         body {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -webkit-touch-callout: none;
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-            -webkit-text-size-adjust: 100%;
-            background-color: #F9F9F9;
-            font-family: 'Georgia', 'Times New Roman', 'FeiHuaSongTi', '宋体', 'Songti SC', serif;
-            color: #111;
+            background-color: #FAFAFA;
+            font-family: 'Georgia', 'Times New Roman', 'Songti SC', '宋体', serif;
+            color: #1e1e1e;
             line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-        }
-        .download-wrapper {
-            margin: auto; 
-            width: 100%;
-            max-width: 720px;
-            padding: 2rem 1.5rem;
-            transition: all 0.2s ease;
-        }
-        .hero-card {
-            background: #ffffff;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04), 0 0 0 1px #efefef;
-            padding: 2rem 1.75rem;
-            border-radius: 0; 
-            transition: box-shadow 0.2s;
+            padding: 0 20px;
         }
 
-        .app-name {
-            font-size: 2rem;
-            font-weight: 550;
-            text-align: center;
-            margin: 1rem 0 0.5rem 0;
-            letter-spacing: -0.3px;
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
         }
-        .tagline {
+
+        /* 头部 */
+        .hero {
             text-align: center;
-            color: #666;
-            font-size: 0.9rem;
+            padding: 3rem 1rem 2rem;
+            background: #fff;
+            border-bottom: 1px solid #eee;
             margin-bottom: 2rem;
-            border-bottom: 1px solid #f2f2f2;
-            padding-bottom: 1.2rem;
+            border-radius: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
-        .feature-grid {
-            display: grid;
-            gap: 1.5rem 1rem;
-            margin: 1.8rem 0 1.5rem;
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #1e1e1e 0%, #3a3a3a 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
         }
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-        .feature-icon {
-            width: 44px;
-            height: 44px;
-            background: #fafafa;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: #1a1a1a;
-            font-size: 1.4rem;
-            border-radius: 0;
-            transition: background 0.2s;
-        }
-        .feature-text h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-            letter-spacing: -0.2px;
-        }
-        .feature-text p {
-            font-size: 0.8rem;
-            color: #777;
-            line-height: 1.4;
-        }
-
-        .download-section {
-            margin: 2rem 0 0.5rem;
-        }
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 1rem;
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-style: italic;
         }
         .download-btn {
-            min-width: 220px;
-            background: #000000;
-            color: white;
-            border: none;
-            padding: 0.9rem 1.8rem;
-            font-size: 1rem;
-            font-weight: 500;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 10px;
+            background: #000;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border: none;
             cursor: pointer;
-            transition: all 0.25s ease;
-            font-family: inherit;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            transition: 0.2s;
             text-decoration: none;
-            letter-spacing: 0.3px;
-        }
-        .download-btn i {
-            font-size: 1.3rem;
-            color: white;
+            font-family: inherit;
+            border-radius: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         .download-btn:active {
-            transform: scale(0.96);
+            transform: scale(0.97);
             background: #222;
         }
-        .info-footnote {
+
+        /* 应用介绍区 */
+        .intro {
+            background: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+            border: 1px solid #f0f0f0;
+        }
+        .intro h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            border-left: 4px solid #000;
+            padding-left: 1rem;
+        }
+        .intro p {
+            margin-bottom: 1rem;
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* 功能网格 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: #fff;
+            padding: 1.8rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+            border-color: #e0e0e0;
+        }
+        .feature-card i {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            color: #1e1e1e;
+        }
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .feature-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* 截图展示区域 - 完整图片展示核心优化 */
+        .screenshots {
+            background: #fff;
+            text-align: left;
+            border-radius: 24px;
+            padding: 1.8rem 1.8rem 1.2rem 1.8rem;
+            margin: 2rem 0 1rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+            border: 1px solid #f0f0f0;
+        }
+        .screenshots h2 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.6rem;
+        }
+        .screenshot-sub {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 1.5rem;
+            border-left: 2px solid #e0e0e0;
+            padding-left: 0.75rem;
+        }
+        
+        /* 横向滚动容器 */
+        .screenshot-placeholder {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            gap: 1.5rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            cursor: grab;
+            scroll-behavior: smooth;
+            padding-bottom: 12px;
+        }
+        .screenshot-placeholder:active {
+            cursor: grabbing;
+        }
+        
+        /* 每个截图卡片 - 固定宽度保证整齐，图片完整展示 */
+        .mock {
+            flex: 0 0 auto;
+            width: 210px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            border-radius: 20px;
+            border: 1px solid rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            scroll-snap-align: start;
+            overflow: hidden;
+            backdrop-filter: blur(0px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+        .mock:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 28px -12px rgba(0,0,0,0.2);
+        }
+        
+        /* 图片容器 — 固定比例，但内部图片完整显示，绝不裁剪 */
+        .mock-img {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            overflow: hidden;
+            background: #F5F3F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        /* 关键修复：让图片完整展示，不裁剪任何内容，保持原始比例 */
+        .mock-img img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        /* 图片说明文字，优雅显示 */
+        .mock-caption {
+            padding: 0.7rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #2c2c2c;
+            background: #fff;
+            width: 100%;
             text-align: center;
-            margin-top: 2rem;
-            color: #999;
-            font-size: 0.7rem;
-            padding-top: 0.8rem;
+            letter-spacing: 0.3px;
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Georgia', serif;
             border-top: 1px solid #f0f0f0;
         }
-        .info-footnote p {
-            margin: 0.2rem 0;
-        }
-        @media (max-width: 560px) {
-            .download-wrapper {
-                padding: 1.2rem 1rem;
-            }
-            .hero-card {
-                padding: 1.5rem 1.2rem;
-            }
-            .feature-grid {
-                gap: 1.2rem;
-            }
-            .download-btn {
-                width: 100%;
-                min-width: unset;
-                padding: 0.85rem 1rem;
-            }
-            .app-name {
-                font-size: 1.8rem;
-                margin-top: 0.5rem;
-            }
-            .tagline {
-                font-size: 0.85rem;
-            }
-            .feature-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1.25rem;
-            }
-        }
-        @media (max-height: 600px) {
-            .download-wrapper {
-                margin: 1rem auto;
-            }
-        }
-        .toast-message {
-            position: fixed;
-            bottom: 28px;
-            left: 50%;
-            transform: translateX(-50%) scale(0.92);
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(12px);
-            color: #fff;
-            padding: 0.5rem 1.2rem;
-            border-radius: 60px;
+        .mock-caption i {
             font-size: 0.8rem;
-            z-index: 1200;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.2s, transform 0.2s;
-            white-space: nowrap;
-            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-            letter-spacing: 0.2px;
+            margin-right: 4px;
+            opacity: 0.7;
         }
-        .toast-message.show {
-            opacity: 1;
-            transform: translateX(-50%) scale(1);
+        
+        /* 滚动条美化 */
+        .screenshot-placeholder::-webkit-scrollbar {
+            height: 4px;
         }
-        .hero-card {
-            transition: transform 0.2s ease, box-shadow 0.2s;
+        .screenshot-placeholder::-webkit-scrollbar-track {
+            background: #eaeaea;
+            border-radius: 8px;
         }
-        @media (hover: hover) {
-            .hero-card:hover {
-                box-shadow: 0 20px 36px rgba(0, 0, 0, 0.04), 0 0 0 1px #e8e8e8;
+        .screenshot-placeholder::-webkit-scrollbar-thumb {
+            background: #bbb;
+            border-radius: 8px;
+        }
+        .screenshot-placeholder::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+        
+        /* 滚动提示横幅 */
+        .scroll-hint {
+            margin-top: 1.2rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #aaa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            letter-spacing: 0.3px;
+            background: #fafaf8;
+            padding: 0.6rem;
+            border-radius: 40px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .scroll-hint i {
+            font-size: 1rem;
+            color: #888;
+        }
+        
+        /* 底部信息 */
+        .footer {
+            background: #fff;
+            padding: 1.8rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid #eee;
+            margin-top: 2.5rem;
+            border-radius: 20px;
+        }
+        .footer a {
+            color: #555;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.2s;
+        }
+        .footer a:hover {
+            color: #000;
+        }
+        .footer p {
+            margin: 0.5rem 0;
+        }
+        .beian {
+            font-size: 0.7rem;
+            color: #aaa;
+        }
+        
+        /* 移动端适配优化 */
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 2.2rem; }
+            .container { padding: 1rem; }
+            .mock {
+                width: 170px;
             }
+            .screenshots {
+                padding: 1.2rem;
+            }
+            .scroll-hint {
+                font-size: 0.6rem;
+                padding: 0.4rem 0.8rem;
+            }
+            .feature-card {
+                padding: 1.4rem;
+            }
+            .intro {
+                padding: 1.5rem;
+            }
+        }
+        
+        button, .download-btn {
+            user-select: none;
+        }
+        
+        /* 增加一点柔和感 */
+        .feature-card, .intro, .screenshots, .footer, .hero {
+            transition: all 0.2s ease;
         }
     </style>
 </head>
 <body>
+<div class="container">
+    <div class="hero">
+        <h1>Read.小读</h1>
+        <div class="tagline">安于闲，乐于独 · 藏在时光里的无尽地带</div>
+        <button class="download-btn" id="androidBtn">
+            <i class="ri-android-line"></i> 安卓下载
+        </button>
+    </div>
 
-<div class="download-wrapper">
-    <div class="hero-card">
-        <div class="app-name">Read.</div>
-        <div class="tagline">安于闲，乐于独 &nbsp;&nbsp;藏在时光里的无尽地带</div>
-        <div class="feature-grid">
-            <div class="feature-item">
-                <div class="feature-icon"><i class="ri-headphone-line"></i></div>
-                <div class="feature-text">
-                    <h4>每日音乐</h4>
-                    <p>一首旋律，沉浸私人时刻</p>
+    <div class="intro">
+        <h2>关于 Read.小读</h2>
+        <p>Read.小读 是一款为深度阅读与音乐爱好者设计的安卓应用。我们相信，在快节奏的数字时代，仍然需要一处安静的角落，让文字与旋律自然流淌。每天，我们精心挑选一首音乐、一句值得收藏的句子、一篇深度文章，陪伴你度过独处的时光。</p>
+        <p>无需复杂的社交，没有无休止的推送。打开 Read.小读，就是翻开一本会呼吸的日记。你可以收藏心动的句子，分享触动你的文章，也可以在评论区留下自己的思考。所有内容按日期编排，像时光的抽屉，随时打开，都是过往的沉淀。</p>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <i class="ri-headphone-line"></i>
+            <h3>每日音乐</h3>
+            <p>一首独立旋律，覆盖古典、爵士、民谣与电子。每一首都是精心挑选，搭配动态封面，支持后台播放与进度拖拽。</p>
+        </div>
+        <div class="feature-card">
+            <i class="ri-article-line"></i>
+            <h3>句子收藏</h3>
+            <p>来自书籍、电影、诗歌的只言片语。可一键收藏，支持配图与作者，让文字在指尖发光。</p>
+        </div>
+        <div class="feature-card">
+            <i class="ri-newspaper-line"></i>
+            <h3>深度文章</h3>
+            <p>原创或授权的长文，涵盖文学、哲学、艺术与生活。排版干净，专注阅读，无广告干扰。</p>
+        </div>
+    </div>
+
+    <!-- 横向滚动图片预览区：图片完整展示优化，无裁剪，保留原始比例 -->
+    <div class="screenshots">
+        <h2><i class="ri-image-line" style="font-size: 1.4rem;"></i> 应用预览</h2>
+        <div class="screenshot-sub">指尖轻滑 · 完整呈现每一帧画面</div>
+        <div class="screenshot-placeholder" id="screenshotContainer">
+            <!-- 卡片 1 - 音乐播放界面，完整图片展示 -->
+            <div class="mock">
+                <div class="mock-img">
+                    <img src="img/banner0.png" alt="音乐播放界面 - 每日旋律沉浸体验" loading="lazy" 
+                         onerror="this.onerror=null;this.src='https://picsum.photos/id/42/400/700?grayscale';">
+                </div>
+                <div class="mock-caption">
+                    <i class="ri-headphone-line"></i> 每日音乐 · 沉浸聆听
                 </div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="ri-article-line"></i></div>
-                <div class="feature-text">
-                    <h4>句子收藏</h4>
-                    <p>字句如光，照亮庸常</p>
+            <!-- 卡片 2 - 句子卡片界面 -->
+            <div class="mock">
+                <div class="mock-img">
+                    <img src="img/banner1.png" alt="句子收藏界面 - 珍藏心动文字" loading="lazy"
+                         onerror="this.onerror=null;this.src='https://picsum.photos/id/20/400/700?grayscale';">
+                </div>
+                <div class="mock-caption">
+                    <i class="ri-bookmark-line"></i> 句子收藏 · 一字一句
                 </div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="ri-newspaper-line"></i></div>
-                <div class="feature-text">
-                    <h4>深度文章</h4>
-                    <p>一字一文，静心慢读</p>
+            <!-- 卡片 3 - 深度文章阅读界面 -->
+            <div class="mock">
+                <div class="mock-img">
+                    <img src="img/banner2.png" alt="深度文章阅读界面 - 沉浸式排版" loading="lazy"
+                         onerror="this.onerror=null;this.src='https://picsum.photos/id/24/400/700?grayscale';">
+                </div>
+                <div class="mock-caption">
+                    <i class="ri-file-text-line"></i> 深度文章 · 静心慢读
                 </div>
             </div>
         </div>
-        <div class="download-section">
-            <div class="btn-group">
-                <button class="download-btn" id="androidBtn">
-                    <i class="ri-android-line"></i>安卓下载
-                </button>
-            </div>
-        </div>
-        <div class="info-footnote">
-            <p>© 2026 Read.</p>
-        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Read.小读 开发者：coveyo（个人开发者）</p>
+        <p>
+            <a href="privacy.html" target="_blank">隐私政策</a> | 
+            <a href="terms.html" target="_blank">用户协议</a>
+        </p>
+        <p>联系方式：cveyo@qq.com</p>
+        <p class="beian">匠心 · 阅读本该纯粹</p>
     </div>
 </div>
 
 <script>
     (function() {
-        function showMessage(text, duration = 2000) {
-            let toast = document.querySelector('.toast-message');
-            if (!toast) {
-                toast = document.createElement('div');
-                toast.className = 'toast-message';
-                document.body.appendChild(toast);
-            }
-            toast.textContent = text;
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, duration);
-        }
-
-        const androidBtn = document.getElementById('androidBtn');
-        if (androidBtn) {
-            androidBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                showMessage('正在下载', 1800);
+        // 安卓下载按钮事件
+        const downloadBtn = document.getElementById('androidBtn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function() {
                 window.location.href = "https://github.com/readsite/read-download/releases/download/0.0.3/Read.apk";
             });
         }
+        
+        // 横向滚动区域：鼠标拖拽 + 触摸优化（保留原有完美体验）
+        const scrollContainer = document.querySelector('.screenshot-placeholder');
+        if (!scrollContainer) return;
+        
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        
+        // 鼠标拖拽滚动
+        scrollContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            scrollContainer.style.cursor = 'grabbing';
+            startX = e.pageX - scrollContainer.offsetLeft;
+            scrollLeft = scrollContainer.scrollLeft;
+            // 防止默认选中
+            e.preventDefault();
+        });
+        scrollContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            scrollContainer.style.cursor = 'grab';
+        });
+        scrollContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            scrollContainer.style.cursor = 'grab';
+        });
+        scrollContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - scrollContainer.offsetLeft;
+            const walk = (x - startX) * 1.2;
+            scrollContainer.scrollLeft = scrollLeft - walk;
+        });
+        scrollContainer.style.cursor = 'grab';
+        
+        // 触摸优化，保证移动端流畅拖拽且不触发页面滚动冲突
+        let touchStartX = 0;
+        let touchScrollLeft = 0;
+        let isTouchActive = false;
+        
+        scrollContainer.addEventListener('touchstart', (e) => {
+            isTouchActive = true;
+            touchStartX = e.touches[0].pageX - scrollContainer.offsetLeft;
+            touchScrollLeft = scrollContainer.scrollLeft;
+            // 阻止轻微触摸时页面滚动
+        }, { passive: false });
+        
+        scrollContainer.addEventListener('touchmove', (e) => {
+            if (!isTouchActive || touchStartX === null) return;
+            const moveX = e.touches[0].pageX - scrollContainer.offsetLeft;
+            const walk = (moveX - touchStartX) * 1;
+            scrollContainer.scrollLeft = touchScrollLeft - walk;
+            // 防止页面滚动
+            e.preventDefault();
+        }, { passive: false });
+        
+        scrollContainer.addEventListener('touchend', () => {
+            isTouchActive = false;
+            touchStartX = 0;
+        });
+        
+        // 可选：平滑滚动增加体验（点击提示无强制效果，保留原生）
+        // 防止图片拖动时出现默认拖拽图片行为
+        const allImgs = document.querySelectorAll('.mock-img img');
+        allImgs.forEach(img => {
+            img.addEventListener('dragstart', (e) => {
+                e.preventDefault();
+                return false;
+            });
+        });
     })();
 </script>
 </body>
